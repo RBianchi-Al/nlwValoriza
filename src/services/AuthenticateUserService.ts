@@ -33,7 +33,7 @@ class AuthenticateUserService{
         // Gerar token
        const token = sign({
             email: user.email
-        }, "#ChaveSecret01", {
+        }, "chavesecret01", {
             subject : user.id,
             expiresIn: "1d"
         }

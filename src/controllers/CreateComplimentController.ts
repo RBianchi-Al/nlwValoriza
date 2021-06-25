@@ -9,13 +9,16 @@ class CreateComplimentController{
             tag_id,
             user_receiver,
             user_sender} = request.body
-        const createComplimentServive = new CreateComplimentService()
+
+            const {user_id} = request;
+
+            const createComplimentServive = new CreateComplimentService()
 
         const compliment = await createComplimentServive.execute({
             message,
             tag_id,
             user_receiver,
-            user_sender
+            user_sender: user_id,
         });
 
         return response.json(compliment)
